@@ -14,10 +14,12 @@ module.exports = defineConfig({
   testDir: "./tests",
   /* Run tests in files in parallel, generally true, but made false to stop parallel execution */
   fullyParallel: false,
+  //make it false to run API test when you dont want to execute test individually, beacuse of dependencies
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
+  //retries: 1,
   /* Opt out of parallel tests on CI. Should be only 1 worker to avoid parallel execution*/
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
